@@ -43,3 +43,14 @@
     echo $this->Html->Link('Logout', ['controller' => 'users', 'action' => 'logout']);
 ?>
 
+<div class="paginator">
+    <ul class="pagination">
+        <?php
+        // Criar navegação de páginas na view pelo componente Paginator
+        echo $this->Paginator->prev('Voltar');
+        echo $this->Paginator->numbers();
+        echo $this->Paginator->next('Avançar');
+        ?>
+    </ul>
+</div>
+

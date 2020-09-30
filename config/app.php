@@ -222,6 +222,23 @@ return [
             'tls' => false,
             'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
         ],
+        'gmail' => [
+            'className' => 'Smtp',
+            /*
+             * The keys host, port, timeout, username, password, client and tls
+             * are used in SMTP transports
+             */
+            'host' => 'stmp.gmail.com',
+            'port' => 587,
+            'timeout' => 60,
+            /*
+             * It is recommended to set these options through your environment or app_local.php
+             */
+            'username' => 'email@gmail.com',
+            'password' => 'senha_aqui',
+            'tls' => true,
+            //'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
+        ],
     ],
 
     /*
@@ -237,6 +254,15 @@ return [
         'default' => [
             'transport' => 'default',
             'from' => 'you@localhost',
+            /*
+             * Will by default be set to config value of App.encoding, if that exists otherwise to UTF-8.
+             */
+            //'charset' => 'utf-8',
+            //'headerCharset' => 'utf-8',
+        ],
+        'gmail' => [
+            'transport' => 'gmail',
+            'from' => 'email@gmail.com',
             /*
              * Will by default be set to config value of App.encoding, if that exists otherwise to UTF-8.
              */
